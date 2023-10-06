@@ -87,19 +87,19 @@ public class SignupView extends JPanel implements ActionListener, PropertyChange
         passwordInputField.addKeyListener(
                 new KeyListener() {
                     @Override
-                    public void keyTyped(KeyEvent e) {
+                    public void keyTyped(KeyEvent ev) {
                         SignupState currentState = signupViewModel.getState();
-                        currentState.setPassword(passwordInputField.getText() + e.getKeyChar());
+                        currentState.setPassword(String.valueOf(passwordInputField.getPassword()) + ev.getKeyChar());
                         signupViewModel.setState(currentState);
                     }
 
                     @Override
-                    public void keyPressed(KeyEvent e) {
+                    public void keyPressed(KeyEvent ev) {
 
                     }
 
                     @Override
-                    public void keyReleased(KeyEvent e) {
+                    public void keyReleased(KeyEvent ev) {
 
                     }
                 }
@@ -108,19 +108,19 @@ public class SignupView extends JPanel implements ActionListener, PropertyChange
         repeatPasswordInputField.addKeyListener(
                 new KeyListener() {
                     @Override
-                    public void keyTyped(KeyEvent e) {
+                    public void keyTyped(KeyEvent eve) {
                         SignupState currentState = signupViewModel.getState();
-                        currentState.setPassword(passwordInputField.getText() + e.getKeyChar());
+                        currentState.setRepeatPassword(String.valueOf(repeatPasswordInputField.getPassword()) + eve.getKeyChar());
                         signupViewModel.setState(currentState);
                     }
 
                     @Override
-                    public void keyPressed(KeyEvent e) {
+                    public void keyPressed(KeyEvent eve) {
 
                     }
 
                     @Override
-                    public void keyReleased(KeyEvent e) {
+                    public void keyReleased(KeyEvent eve) {
 
                     }
                 }
